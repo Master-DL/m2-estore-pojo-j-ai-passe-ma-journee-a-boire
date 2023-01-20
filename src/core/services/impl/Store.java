@@ -1,13 +1,15 @@
-package core.services;
+package core.services.impl;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import core.data.Cart;
-import core.data.ItemInStock;
-import core.data.Order;
+import core.data.impl.Cart;
+import core.data.impl.ItemInStock;
+import core.data.impl.Order;
+import core.services.BankInterface;
+import core.services.ProviderInterface;
 import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
@@ -15,8 +17,8 @@ import estorePojo.exceptions.UnknownItemException;
 
 public class Store {
 
-    private Provider provider;
-    private Bank bank;
+    private ProviderInterface provider;
+    private BankInterface bank;
 
     /**
      * Constructs a new StoreImpl

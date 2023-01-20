@@ -1,13 +1,15 @@
-package core.services;
+package core.services.impl;
 
-import core.data.Account;
+import core.data.AccountInterface;
+import core.data.impl.Account;
+import core.services.BankInterface;
 import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.UnknownAccountException;
 
-public class Bank {
+public class Bank implements BankInterface {
 
-	private Account estore;
-	private Account anne, bob;
+	private AccountInterface estore;
+	private AccountInterface anne, bob;
 
 	public Bank() {
 		estore = new Account();
@@ -22,9 +24,10 @@ public class Bank {
 		bob.setAmount(100);
 	}
 
+	@Override
 	public void transfert(String from, String to, double amount)
 			throws InsufficientBalanceException, UnknownAccountException {
-		Account Afrom = null, Ato = null;
+		AccountInterface Afrom = null, Ato = null;
 
 		if (from.equals("E-Store"))
 			Afrom = estore;

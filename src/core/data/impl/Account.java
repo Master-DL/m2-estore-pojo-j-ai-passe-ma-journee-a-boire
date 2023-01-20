@@ -1,32 +1,36 @@
-package core.data;
+package core.data.impl;
 
+import core.data.AccountInterface;
 import estorePojo.exceptions.InsufficientBalanceException;
 
-public class Account {
+public class Account implements AccountInterface {
 
     private double amount;
     private String owner;
-
+    @Override
     public String getOwner() {
         return owner;
     }
-
+    @Override
     public void setOwner(String owner) {
         this.owner = owner;
     }
-
+    @Override
     public double getAmount() {
         return amount;
     }
 
+    @Override
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    
+
+    @Override
     public void credit(double amount) {
         this.amount += amount;        
     }
 
+    @Override
     public void withdraw(double amount) throws InsufficientBalanceException {
         if ( this.amount < amount )
             throw new InsufficientBalanceException(owner);

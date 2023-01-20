@@ -1,4 +1,4 @@
-package core.data;
+package core.data.impl;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import core.services.Client;
+import core.services.impl.Client;
 import estorePojo.exceptions.UnknownItemException;
 
 public class Order {
