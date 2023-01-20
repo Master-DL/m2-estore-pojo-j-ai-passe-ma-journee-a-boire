@@ -26,3 +26,7 @@ hs_err_pid*
 # Eclipse
 .classpath
 .project
+
+m2-estore-pojo-j-ai-passe-ma-journee-a-boire.iml
+out
+.idea
